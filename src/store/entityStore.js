@@ -20,4 +20,9 @@ export const useEntityStore = create((set) => ({
                 ...data,
             });
         }),
+
+    deleteEntity: (data) =>
+        set((state) => {
+            return (state.entities = state.entities.filter((item) => item.id !== data));
+        }),
 }));
