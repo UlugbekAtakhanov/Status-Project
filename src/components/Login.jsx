@@ -10,7 +10,7 @@ const Login = () => {
         e.preventDefault();
         const username = usernameRef.current.value;
         const password = passwordRef.current.value;
-        if (username === "bek@pkfantares" && password === "Calgary2023!#") {
+        if (username === "bek@pkfantares.com" && password === "Calgary2023!#") {
             localStorage.setItem("auth", JSON.stringify({ username, password }));
             navigate("/");
         } else {

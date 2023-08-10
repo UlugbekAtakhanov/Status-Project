@@ -8,7 +8,7 @@ const App = () => {
 
     useEffect(() => {
         const auth = JSON.parse(localStorage.getItem("auth"));
-        if (auth && auth.username === "bek@pkfantares" && auth.password === "Calgary2023!#") {
+        if (auth && auth.username === "bek@pkfantares.com" && auth.password === "Calgary2023!#") {
             navigate("/");
         } else {
             navigate("/login");
