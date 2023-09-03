@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import LoginPageLayout from "./layouts/LoginPageLayout";
 import HomePageLayout from "./layouts/HomePageLayout";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ const App = () => {
 
     return (
         <div>
+            <Toaster />
             <Routes>
                 <Route path="/" element={<HomePageLayout />} />
                 <Route path="/login" element={<LoginPageLayout />} />

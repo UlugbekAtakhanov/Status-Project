@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { useEntityStore } from "../store/entityStore";
+import { toast } from "react-hot-toast";
 
 const Modal = ({ open, setOpen }) => {
     const { addEntity } = useEntityStore((state) => state);
@@ -25,8 +26,10 @@ const Modal = ({ open, setOpen }) => {
             await setDoc(doc(db, "entities", data.id), data);
             addEntity(data);
             setOpen(false);
+            toast.success("Added successfully!");
         } catch (error) {
             console.log(error);
+            toast.error("Sth went wrong, please try again!");
         }
     };
 

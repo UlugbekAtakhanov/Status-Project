@@ -3,11 +3,7 @@ import { ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DropdownMenuDemo = () => {
-    // const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
-    // const [urlsChecked, setUrlsChecked] = React.useState(false);
-    const [person, setPerson] = React.useState("active");
-
+const DropdownMenuDemo = ({ project, setProject }) => {
     const navigate = useNavigate();
 
     return (
@@ -27,7 +23,7 @@ const DropdownMenuDemo = () => {
                     <DropdownMenu.Sub>
                         <DropdownMenu.SubTrigger className="group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[state=open]:bg-violet4 data-[state=open]:text-violet11 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-gray-100 data-[highlighted]:text-violet1 data-[highlighted]:data-[state=open]:bg-gray-100 data-[highlighted]:data-[state=open]:text-violet1">
                             Projects
-                            <div className="ml-auto pl-[20px] text-slate-500 group-data-[highlighted]:text-white group-data-[disabled]:text-mauve8">
+                            <div className="ml-auto pl-[20px] text-slate-500 group-data-[highlighted]:text-black group-data-[disabled]:text-mauve8">
                                 <ChevronRightIcon />
                             </div>
                         </DropdownMenu.SubTrigger>
@@ -41,7 +37,7 @@ const DropdownMenuDemo = () => {
                             >
                                 <DropdownMenu.Label className="pl-[25px] text-xs leading-[25px] text-slate-500">Projects</DropdownMenu.Label>
 
-                                <DropdownMenu.RadioGroup value={person} onValueChange={setPerson}>
+                                <DropdownMenu.RadioGroup value={project} onValueChange={setProject}>
                                     <DropdownMenu.RadioItem
                                         className="text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-gray-100 data-[highlighted]:text-violet1"
                                         value="active"
@@ -53,7 +49,7 @@ const DropdownMenuDemo = () => {
                                     </DropdownMenu.RadioItem>
                                     <DropdownMenu.RadioItem
                                         className="text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-gray-100 data-[highlighted]:text-violet1"
-                                        value="archive"
+                                        value="archived"
                                     >
                                         <DropdownMenu.ItemIndicator className="absolute left-0 w-[25px] inline-flex items-center justify-center">
                                             <DotFilledIcon />
