@@ -2,9 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background: url(./assets/bgWhite.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
-@layer base {
-    body {
-        @apply bg-sky-100
-    }
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumbhover {
+    background: transparent;
 }
